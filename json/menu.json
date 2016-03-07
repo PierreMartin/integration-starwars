@@ -1,0 +1,13 @@
+{
+  "menu": {
+    "name": "menu_header",
+    "menu_items": [
+      { "title": "Le coté lumineux",  "url": "#" },
+      { "title": "Le coté obscur",    "url": "#" },
+      { "title": "L'empire",          "url": "#" },
+      { "title": "Les Droïde",        "url": "#" },
+      { "title": "Les Ewoks",         "url": "#" },
+      { "title": "Jabbat le Hutt",    "url": "#" }
+    ]
+  }
+}

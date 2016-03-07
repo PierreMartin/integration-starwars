@@ -1,0 +1,190 @@
+@import 'compass';
+
+$yellow: #ffe900;
+$bg_dark: #181818;
+$txt_footer: #9B9B9B;
+
+/******************** GENERAL *********************/
+::-moz-selection { background: #b3d4fc; text-shadow: none; }
+::selection      { background: #b3d4fc; text-shadow: none; }
+
+a:link, a:visited { text-decoration: none; }
+a:hover, a:focus  { text-decoration: none; }
+a:active          { text-decoration: none; }
+
+h1 { line-height: 1.2em; }
+h2 { font-size: 32px; line-height: 1.4em; }
+h3 { font-size: 30px; line-height: 1.5em; }
+
+* { box-sizing: border-box; }
+
+img { max-width: 100%; width: auto; height: auto;  }
+
+body {
+  font-size: 14px;
+  line-height: 1.8em;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+}
+
+.text_style_reset {
+  font-size: inherit;
+  line-height: inherit;
+  margin: inherit;
+  padding: inherit;
+}
+
+.underline { text-decoration: underline; }
+
+.column_3 {
+  display: inline-block;
+  width: 32%;
+  vertical-align: top;
+}
+
+.center { text-align: center; }
+.right  { text-align: right; }
+.hidden { display: none; }
+.show   { display: block !important; }
+
+/****************** CONTENEUR (780 + 30*2 padding) *******************/
+.container { max-width: 840px; margin: 0 auto; padding: 0 30px; }
+
+/****************** HEADER *******************/
+header {
+  position: relative;
+  background: $bg_dark url('img/header-bg.jpg') repeat center center;
+  background-size: cover;
+  height: 500px;
+  h1.logo_big {
+    font-size: 0; text-align: center;
+    img { margin-top: 120px; }
+  }
+
+  nav {
+    position: fixed;
+    z-index: 999999999;
+    width: 100%;
+    padding: 15px 0;
+    background-color: rgba(24, 24, 24, 0.75);
+  }
+
+  nav ul      { list-style: none; margin: 0; padding: 0; text-align: center; }
+  nav ul li   { display: inline-block; }
+  nav ul li a { padding: 8px 13px; text-transform: uppercase; color: white; font-size: 14px; @include transition(0.4s);
+    &:hover, &focus { color: $yellow; }
+    &:active        { color: white; }
+  }
+  nav ul li:first-of-type a   { padding-left: 0 }
+  nav ul li:last-of-type a    { padding-right: 0 }
+
+  #menu_open  { position: absolute; right: 20px; top: 20px; }
+}
+
+
+nav.menu_mobile {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: url('img/header-bg.jpg') repeat;
+  height: 100%;
+  text-align: center;
+
+  .container { padding: 0; }
+  ul {
+    text-align: center;
+    padding: 0;
+    margin-top: 50px;
+    li {
+      display: block;
+      margin-top: 38px;
+      a { font-size: 20px; padding: 8px 13px; text-transform: uppercase; color: white; font-weight: bold; @include transition(0.4s);
+        &:hover, &focus { color: $yellow; }
+        &:active        { color: white; }
+      }
+    }
+  }
+
+  #menu_close { position: fixed; left: 20px; top: 20px; }
+}
+
+/****************** SECTION 1 *******************/
+#bloc1 {
+  font-size: 18px;
+  margin-top: 100px;
+  margin-bottom: 90px;
+  article { display: inline-block; width: 49%; vertical-align: top;}
+  aside   { display: inline-block; width: 49%; vertical-align: top;
+    img { margin-left: 65px; }
+  }
+}
+
+/****************** SECTION 2 *******************/
+#bloc2 {
+  background: url('img/kiloren.jpg') no-repeat center center;
+  background-size: cover;
+  height: 500px;
+}
+
+/****************** SECTION 3 *******************/
+#bloc3 {
+  overflow: hidden;
+  line-height: 24px;
+  margin-bottom: 40px;
+
+  h2 { text-align: center; margin-top: 60px; }
+  .img_robot { float: left; margin: 7px 20px 20px 0}
+  ul.list {
+    padding-left: 0;
+    clear: both;
+    li { list-style-type: none; }
+    li:before { content: "- "; }
+  }
+}
+
+
+/****************** SECTION END *******************/
+#blocend {
+  background: url('img/stormtroopers.jpg') no-repeat center center;
+  background-size: cover;
+  height: 250px;
+}
+
+/****************** FOOTER *******************/
+footer {
+  background: $bg_dark url('img/darthvader.jpg') no-repeat center center;
+  color: $txt_footer;
+
+  .copyright { text-align: center; padding: 50px 0 30px 0; margin: 0; }
+  ul {
+    padding: 0;
+    margin: 0;
+    li {
+      list-style-type: none;
+      margin: 8px 0;
+      &:first-of-type { margin-top: 0; }
+      a {
+        @include transition(0.4s);
+        &:link, &:visited {
+          text-decoration: underline;
+          color: $txt_footer;
+          font-size: 12px;
+        }
+        &:hover, &:focus {
+          color: white;
+        }
+      }
+    }
+  }
+  .container_column { padding-bottom: 70px; }
+  .title_social     { margin-bottom: 15px; text-transform: uppercase; font-size: 12px; }
+  .social {
+    margin: 0 8px;
+    &:last-of-type { margin-right: 0; }
+    i, .icon-icon_facebook span:before { @include transition(0.4s); }
+    i:hover, i:focus, .icon-icon_facebook span:hover:before { color: $yellow; }
+  }
+
+}
